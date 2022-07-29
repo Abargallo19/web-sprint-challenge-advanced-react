@@ -13,13 +13,22 @@ const initialState = {
   steps: initialSteps,
 }
 
+const plot = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3], [3, 1], [3, 2], [3, 3]];
+
 export default class AppClass extends React.Component {
   // THE FOLLOWING HELPERS ARE JUST RECOMMENDATIONS.
   // You can delete them and build your own logic from scratch.
+  constructor() {
+    super();
+    this.state = {
+      // ...initialState
+    }
+  }
 
-  getXY = () => {
+  getXY = (idx) => {
     // It it not necessary to have a state to track the coordinates.
     // It's enough to know what index the "B" is at, to be able to calculate them.
+    return plot[idx];
   }
 
   getXYMessage = () => {
@@ -30,6 +39,10 @@ export default class AppClass extends React.Component {
 
   reset = () => {
     // Use this helper to reset all states to their initial values.
+    this.setState({
+      ...this.state,
+      initialState
+    })
   }
 
   getNextIndex = (direction) => {
