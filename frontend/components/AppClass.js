@@ -21,7 +21,7 @@ export default class AppClass extends React.Component {
   constructor() {
     super();
     this.state = {
-      // ...initialState
+      ...initialState
     }
   }
 
@@ -35,6 +35,8 @@ export default class AppClass extends React.Component {
     // It it not necessary to have a state to track the "Coordinates (2, 2)" message for the user.
     // You can use the `getXY` helper above to obtain the coordinates, and then `getXYMessage`
     // returns the fully constructed string.
+    const message = `Coordinates(${this.getXY(idx)[1]}, ${this.getXY(idx)[0]})`
+    return mess
   }
 
   reset = () => {
